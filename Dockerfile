@@ -6,6 +6,7 @@ RUN mkdir -p /opt/dynamodb-backup-restore && cp -a /tmp/node_modules /opt/dynamo
 
 WORKDIR /opt/dynamodb-backup-restore
 ADD . /opt/dynamodb-backup-restore
+RUN ["chmod", "+x", "/opt/dynamodb-backup-restore/bin/dynamo-backup-to-s3"]
 
 ENV TABLE_NAME Products
 ENV S3_BUCKET nexiot-sandbox-backup
