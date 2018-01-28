@@ -8,7 +8,7 @@ WORKDIR /opt/dynamodb-backup-restore
 ADD . /opt/dynamodb-backup-restore
 RUN ["chmod", "+x", "/opt/dynamodb-backup-restore/bin/dynamo-backup-to-s3"]
 
-ENV TABLE_NAME Products
+ENV TABLE_NAME Nx.Daborc.State.1
 ENV S3_BUCKET nexiot-sandbox-backup
 ENV REGION eu-central-1
-CMD ./bin/dynamo-backup-to-s3 -b $S3_BUCKET -i $TABLE_NAME --aws-region $REGION
+CMD ./bin/dynamo-backup-to-s3 -b $S3_BUCKET -x $TABLE_NAME --aws-region $REGION
